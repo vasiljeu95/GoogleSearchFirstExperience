@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleSearchDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cvj-dq-pkF">
+                                <rect key="frame" x="16" y="44" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-wi-KZa">
+                                <rect key="frame" x="117" y="82" width="141" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Google Search"/>
+                                <connections>
+                                    <action selector="pressSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nLQ-Mm-Q8a"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCU-We-ytH">
+                                <rect key="frame" x="0.0" y="157" width="375" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="googleSearchAddressCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="googleSearchAddressCell" id="6Yn-Ld-VwX" customClass="SearchAddressCell" customModule="GoogleSearchDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Yn-Ld-VwX" id="7wT-N2-txp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4l-Tt-X9G">
+                                                    <rect key="frame" x="16" y="8" width="343" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="v4l-Tt-X9G" secondAttribute="trailing" constant="16" id="STL-OL-AbF"/>
+                                                <constraint firstItem="v4l-Tt-X9G" firstAttribute="top" secondItem="7wT-N2-txp" secondAttribute="top" constant="8" id="VEz-YG-t0H"/>
+                                                <constraint firstItem="v4l-Tt-X9G" firstAttribute="leading" secondItem="7wT-N2-txp" secondAttribute="leading" constant="16" id="uyA-Eh-mrP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gj9-aP-imd"/>
+                                </connections>
+                            </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fek-EA-Beo">
+                                <rect key="frame" x="16" y="129" width="343" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fek-EA-Beo" firstAttribute="top" secondItem="BVL-wi-KZa" secondAttribute="bottom" constant="8" id="9Hh-YE-WDe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BVL-wi-KZa" secondAttribute="trailing" constant="117" id="OEo-ll-UQh"/>
+                            <constraint firstItem="oCU-We-ytH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Re0-8h-bzb"/>
+                            <constraint firstItem="Fek-EA-Beo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ycm-pL-wv8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oCU-We-ytH" secondAttribute="bottom" id="ZtV-UL-0QC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oCU-We-ytH" secondAttribute="trailing" id="bXe-zZ-04y"/>
+                            <constraint firstItem="Fek-EA-Beo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="duO-2H-DA3"/>
+                            <constraint firstItem="cvj-dq-pkF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="hKH-ZQ-bQj"/>
+                            <constraint firstItem="BVL-wi-KZa" firstAttribute="top" secondItem="cvj-dq-pkF" secondAttribute="bottom" constant="8" id="mFY-QZ-XBp"/>
+                            <constraint firstItem="cvj-dq-pkF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="p8D-uV-yOw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cvj-dq-pkF" secondAttribute="trailing" constant="16" id="taX-JH-89b"/>
+                            <constraint firstItem="BVL-wi-KZa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="vIf-Mu-ptf"/>
+                            <constraint firstItem="oCU-We-ytH" firstAttribute="top" secondItem="Fek-EA-Beo" secondAttribute="bottom" constant="26" id="vdx-6E-w4N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="Fek-EA-Beo" id="1uN-iB-ep7"/>
+                        <outlet property="searchButton" destination="BVL-wi-KZa" id="U70-gC-Jae"/>
+                        <outlet property="searchTextField" destination="cvj-dq-pkF" id="Wfu-2g-VgQ"/>
+                        <outlet property="tableView" destination="oCU-We-ytH" id="f2T-4u-CHt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
